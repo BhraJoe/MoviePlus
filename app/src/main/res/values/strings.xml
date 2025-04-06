@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">MoviePlus</string>
+
+
+    <string name="Create">Create Account</string>
+    <string name="Create1">Create an account so you can explore for the existing jobs</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="Confirm">Confirm Password</string>
+    <string name="Sign">Sign Up</string>
+    <string name="Already">Already have an account?</string>
+    <string name="Or">Or continue with</string>
+
+
+    <string name="Login">Login here</string>
+    <string name="Welcome">Welcome back you have been missed!</string>
+    <string name="Sign1">Sign In</string>
+    <string name="Forgot">Forgot password?</string>
+    <string name="Create2">Create new account</string>
+
+
+    <string name="Discover">Discover Your Dream Job here</string>
+    <string name="Explore">Explore all the existing job roles based on your interest and study major</string>
+    <string name="Log">Login </string>
+    <string name="Register">Register</string>
+
+
+    <string name="title_activity_movie_plus">MoviePlusActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">MoviePlus</string>
+    <string name="nav_header_subtitle">http://movieplus.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">TV Shows</string>
+    <string name="menu_gallery">Movies</string>
+
+    <string name="menu_movie">Top 10 Movies</string>
+
+
+</resources>
