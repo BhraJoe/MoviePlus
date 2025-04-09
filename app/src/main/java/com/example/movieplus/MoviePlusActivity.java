@@ -46,7 +46,9 @@ public class MoviePlusActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home,
                 R.id.nav_gallery,
-                R.id.nav_movie
+                R.id.nav_movie,
+                R.id.nav_favorites,
+                R.id.nav_logout
 
         )
                 .setOpenableLayout(drawer)

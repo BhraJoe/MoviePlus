@@ -24,7 +24,7 @@
             android:name=".DetailPage"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".MoviePlusActivity"
             android:exported="false" />
         <activity
             android:name=".LoginRegisterPage"
@@ -32,7 +32,7 @@
             android:label="@string/title_activity_movie_plus"
             android:theme="@style/Theme.MoviePlus.NoActionBar" />
         <activity
-            android:name=".MoviePlusActivity"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

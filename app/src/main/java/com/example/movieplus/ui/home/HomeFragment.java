@@ -25,8 +25,6 @@ public class HomeFragment extends Fragment implements SelectedHomeItem  {
 
 
     FragmentHomeBinding  binding;
-
-    WebView webView;
     RecyclerView recyclerView;
     MyItemRecyclerViewAdapter  adapter1,adapter2;
     SearchView searchView;

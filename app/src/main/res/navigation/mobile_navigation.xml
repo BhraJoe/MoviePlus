@@ -22,4 +22,19 @@
         android:name="com.example.movieplus.ui.movies.MovieFragment"
         android:label="@string/menu_movie"
         tools:layout="@layout/fragment_movie_list" />
+
+    <fragment
+        android:id="@+id/nav_favorites"
+        android:name="com.example.movieplus.ui.Favorites.FavoritesFragment"
+        android:label="@string/menu_favorites"
+        tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.movieplus.LogoutFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout" />
+
+
+
 </navigation>

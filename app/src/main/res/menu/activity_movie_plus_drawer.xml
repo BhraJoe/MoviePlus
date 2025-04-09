@@ -18,5 +18,15 @@
             android:id="@+id/nav_movie"
             android:icon="@drawable/ic_menu_movies"
             android:title="Movie" />
+
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@android:drawable/btn_star"
+            android:title="@string/menu_favorites" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_menu_movies"
+            android:title="Logout" />
     </group>
 </menu>
