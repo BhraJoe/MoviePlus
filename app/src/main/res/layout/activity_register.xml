@@ -89,6 +89,7 @@
                     android:drawableStart="@android:drawable/sym_action_email"
                     android:drawableTint="#0C1D78"
                     android:gravity="center"
+                    android:inputType="text|textPassword"
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -117,6 +118,7 @@
                     android:drawableStart="@android:drawable/sym_action_email"
                     android:drawableTint="#0C1D78"
                     android:gravity="center"
+                    android:inputType="text|textPassword"
                     android:password="false"
                     android:textSize="16dp"
                     android:textStyle="bold" />

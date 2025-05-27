@@ -32,11 +32,12 @@
     <string name="nav_header_subtitle">http://movieplus.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
 
     <string name="menu_home">TV Shows</string>
     <string name="menu_gallery">Movies</string>
     <string name="menu_favorites">Favorites</string>
-    <string name="menu_logout">Logout</string>
+
 
     <string name="menu_movie">Top 10 Movies</string>
     <!-- TODO: Remove or change this placeholder text -->

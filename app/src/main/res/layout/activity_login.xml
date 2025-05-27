@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".Login">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,6 +87,7 @@
                 android:drawableStart="@android:drawable/sym_action_email"
                 android:drawableTint="#0C1D78"
                 android:gravity="center"
+                android:inputType="text|textPassword"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />

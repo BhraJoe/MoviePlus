@@ -16,8 +16,7 @@ import com.example.movieplus.R;
 
 public class FavoritesFragment extends Fragment {
 
-    private FavoritesViewModel mViewModel;
-
+ 
     public static FavoritesFragment newInstance() {
         return new FavoritesFragment();
     }
@@ -28,11 +27,5 @@ public class FavoritesFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_favorites, container, false);
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(FavoritesViewModel.class);
-        // TODO: Use the ViewModel
-    }
 
 }
