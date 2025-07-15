@@ -1,8 +1,10 @@
 package com.example.movieplus;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -23,10 +25,11 @@ public class Login extends AppCompatActivity {
 
     TextInputEditText email, password;
     private FirebaseAuth mAuth;
+    private View TextView100,TextView7;
 
 
 
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +45,37 @@ public class Login extends AppCompatActivity {
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
+        TextView100 = findViewById(R.id.TextView100);
+        TextView7 = findViewById(R.id.TextView7);
+
+
+        TextView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Register.class);
+                startActivity(intent);
+            }
+
+        });
+
+
+
+
+        TextView100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ForgotPassword.class);
+                startActivity(intent);
+            }
+
+        });
+
+
+
+
 
     }
+
 
     public void login(View view) {
 //        Intent intent = new Intent(getApplicationContext(), Register.class);
@@ -102,7 +134,9 @@ public class Login extends AppCompatActivity {
 
 
 
+
         }
+
 
     private void updateUI(FirebaseUser firebaseUser) {
 
@@ -129,9 +163,10 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    public void  logout(){
-        FirebaseAuth.getInstance().signOut();
-    }
+
+
+
+
 
 //    @Override
 //    public void onBackPressed() {
