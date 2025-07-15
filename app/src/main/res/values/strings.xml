@@ -21,8 +21,15 @@
 
     <string name="Discover">Discover Your Dream Job here</string>
     <string name="Explore">Explore all the existing job roles based on your interest and study major</string>
-    <string name="Log">Login </string>
-    <string name="Register">Register</string>
+    <string name="Log">Log In </string>
+    <string name="Register">Sign up</string>
+
+
+    <string name="password">FORGOT PASSWORD</string>
+    <string name="provide">Provide your accounts email for which you want
+    to reset your password</string>
+
+
 
 
     <string name="title_activity_movie_plus">MoviePlusActivity</string>
@@ -42,6 +49,10 @@
     <string name="menu_movie">Top 10 Movies</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="remove_favorite">Remove from favorites</string>
+    <string name="no_favorites">No favorites yet</string>
 
 
 </resources>
