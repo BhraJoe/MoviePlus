@@ -34,7 +34,7 @@ public class MovieFragment extends Fragment implements SelectedHomeItem {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
-    private int mColumnCount = 3;
+    private int mColumnCount = 2;
     ArrayList<PlaceholderContent> searchHolder,searchHolder2,arrayList, arrayList2,arrayList3;
 //    SearchView searchView;
     
@@ -165,7 +165,7 @@ public class MovieFragment extends Fragment implements SelectedHomeItem {
         arrayList2.add(new PlaceholderContent("Rebel Moon Part Two: The Scargiver","","Title",R.drawable.image20,"https://www.youtube.com/embed/UEJuNHOd8Dw?si=GxgsWVVw41EChAeH"));
 
 
-        recyclerView2.setLayoutManager(new GridLayoutManager(getActivity(), 3, GridLayoutManager.VERTICAL, false));
+        recyclerView2.setLayoutManager(new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false));
         recyclerView2.setAdapter(new MyItemRecyclerViewAdapter(arrayList2,this));
 //        SearchView();
 
@@ -217,7 +217,7 @@ public class MovieFragment extends Fragment implements SelectedHomeItem {
         arrayList3.add(new PlaceholderContent("6 Hours Away"," An Ex-Marine must assassinate the" +
                 " six rivals of the Cartel leader who kidnapped his wife, or never" +
                 " see her again.","Title",R.drawable.image54,"https://www.youtube.com/embed/Z9rcVX8GZww?si=dgMqz_8YeFG9tWpK"));
-        recyclerView3.setLayoutManager(new GridLayoutManager(getActivity(), 3, GridLayoutManager.VERTICAL, false));
+        recyclerView3.setLayoutManager(new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false));
         recyclerView3.setAdapter(new MyItemRecyclerViewAdapter(arrayList3,this));
 
 //        SearchView();

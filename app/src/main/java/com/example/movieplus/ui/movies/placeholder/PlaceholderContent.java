@@ -1,10 +1,5 @@
 package com.example.movieplus.ui.movies.placeholder;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.webkit.WebView;
-
 /**
  * Helper class for providing sample content for user interfaces created by
  * Android template wizards.
@@ -77,7 +72,14 @@ public class PlaceholderContent {
         this.desc = desc;
     }
 
+    public String getYoutubeUrl() {
 
+        return null;
+    }
+
+    public boolean toStringArray() {
+        return false;
+    }
 
 
     /**
