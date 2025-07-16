@@ -3,14 +3,11 @@ package com.example.movieplus;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.movieplus.databinding.ActivityRegisterBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +22,7 @@ public class Register extends AppCompatActivity {
     private FirebaseAuth mAuth;
     ActivityRegisterBinding binding;
     TextInputEditText Email, Password, Cpassword;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +36,17 @@ public class Register extends AppCompatActivity {
         Email = binding.Email;
         Password = binding.Password;
         Cpassword = binding.Cpassword;
+        textView = binding.textView;
 
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 //        EdgeToEdge.enable(this);
 //        setContentView(R.layout.activity_register);

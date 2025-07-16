@@ -3,22 +3,16 @@ package com.example.movieplus.ui.Favorites;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.movieplus.R;
-import com.example.movieplus.ui.movies.placeholder.PlaceholderContent;
-import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
+import com.example.movieplus.R;
+
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class FavoritesFragment extends Fragment {
@@ -47,7 +41,6 @@ public class FavoritesFragment extends Fragment {
     public static void removeFromFavorites(Context context, String videoId) {
         // Implement logic to remove video from favorites
         // You can use SharedPreferences or any other storage mechanism
-
         Set<String> favorites = getFavorites(context);
         favorites.remove(videoId);
         saveFavorites(context, favorites);

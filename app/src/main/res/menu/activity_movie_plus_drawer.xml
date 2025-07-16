@@ -14,10 +14,10 @@
             android:title="@string/menu_gallery" />
 
 
-        <item
-            android:id="@+id/nav_movie"
-            android:icon="@drawable/ic_menu_movies"
-            android:title="Movie" />
+<!--        <item-->
+<!--            android:id="@+id/nav_movie"-->
+<!--            android:icon="@drawable/ic_menu_movies"-->
+<!--            android:title="Movie" />-->
 
         <item
             android:id="@+id/nav_favorites"
