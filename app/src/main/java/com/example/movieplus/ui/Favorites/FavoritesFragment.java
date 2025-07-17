@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -27,59 +28,41 @@ public class FavoritesFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_favorites, container, false);
     }
 
-    public static void addToFavorites(Context context, String videoId) {
-        // Implement logic to add video to favorites
-        // You can use SharedPreferences or any other storage mechanism
-        // For example, you can use a Set to store favorite video IDs
-        // Here's an example using SharedPreferences:
 
-        Set<String> favorites = getFavorites(context);
+    public static void addToFavorites(Context context, String videoId) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        Set<String> favorites = prefs.getStringSet(KEY_FAVORITES, new HashSet<>());
         favorites.add(videoId);
-        saveFavorites(context, favorites);
+
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putStringSet(KEY_FAVORITES, favorites);
+        editor.apply();
+
+
     }
 
     public static void removeFromFavorites(Context context, String videoId) {
-        // Implement logic to remove video from favorites
-        // You can use SharedPreferences or any other storage mechanism
-        Set<String> favorites = getFavorites(context);
+        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        Set<String> favorites = prefs.getStringSet(KEY_FAVORITES, new HashSet<>());
         favorites.remove(videoId);
-        saveFavorites(context, favorites);
-    }
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putStringSet(KEY_FAVORITES, favorites);
+        editor.apply();
 
+    }
     public static boolean isFavorite(Context context, String videoId) {
-        return getFavorites(context).contains(videoId);
-    }
-
-    private static Set<String> getFavorites(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        return prefs.getStringSet(KEY_FAVORITES, new HashSet<>());
-    }
+        Set<String> favorites = prefs.getStringSet(KEY_FAVORITES, new HashSet<>());
+        return favorites.contains(videoId);
 
-    private static void saveFavorites(Context context, Set<String> favorites) {
-        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        prefs.edit().putStringSet(KEY_FAVORITES, favorites).apply();
-
-    }
-
-    public static void refreshFavorites(Context context) {
-        if (instance != null) {
-            instance.loadFavorites();
-        }
-
-    }
-
-    private void loadFavorites() {
-        Set<String> favorites = getFavorites(getContext());
-        // Update UI with favorites
 
 
     }
 
-    private static FavoritesFragment instance;
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        instance = this;
-    }
+
+
+
+
+
 }

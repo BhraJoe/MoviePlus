@@ -142,8 +142,16 @@ public class Register extends AppCompatActivity {
             FirebaseUser currentUser = mAuth.getCurrentUser();
             updateUI(currentUser);
         } catch (Exception e) {
-            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Register.class);
+        startActivity(intent);
     }
 
 }
