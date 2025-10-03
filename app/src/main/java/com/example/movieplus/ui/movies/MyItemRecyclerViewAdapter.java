@@ -1,22 +1,16 @@
 package com.example.movieplus.ui.movies;
 
-import static android.content.Intent.*;
-
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.movieplus.R;
-import com.example.movieplus.User.SelectedHomeItem;
-import com.example.movieplus.ui.movies.placeholder.PlaceholderContent;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.movieplus.User.SelectedHomeItem;
 import com.example.movieplus.databinding.FragmentMovieBinding;
+import com.example.movieplus.ui.movies.placeholder.PlaceholderContent;
 
 import java.util.List;
 
@@ -67,9 +61,9 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView textView;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public ImageView imageView;
+        public TextView textView;
 
 
         public ViewHolder(FragmentMovieBinding binding) {
