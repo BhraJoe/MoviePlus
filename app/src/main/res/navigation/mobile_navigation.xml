@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.movieplus.ui.home.HomeFragment"
+        android:name="com.demo.movieplus.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.movieplus.ui.gallery.GalleryFragment"
+        android:name="com.demo.movieplus.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_movie"
-        android:name="com.example.movieplus.ui.movies.MovieFragment"
+        android:name="com.demo.movieplus.ui.movies.MovieFragment"
         android:label="@string/menu_movie"
         tools:layout="@layout/fragment_movie_list" />
 
     <fragment
         android:id="@+id/nav_favorites"
-        android:name="com.example.movieplus.ui.Favorites.FavoritesFragment"
+        android:name="com.demo.movieplus.ui.Favorites.FavoritesFragment"
         android:label="@string/menu_favorites"
         tools:layout="@layout/fragment_favorites" />
 
