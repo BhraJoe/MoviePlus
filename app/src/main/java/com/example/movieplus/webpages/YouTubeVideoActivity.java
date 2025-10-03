@@ -1,11 +1,16 @@
 package com.example.movieplus.webpages;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,21 +19,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentActivity;
 
 import com.example.movieplus.R;
-import com.example.movieplus.ui.Favorites.FavoritesFragment;
+import com.example.movieplus.ui.Favorites.DatabaseHelper;
+import com.example.movieplus.ui.gallery.GalleryFragment;
+import com.example.movieplus.ui.home.HomeFragment;
 
-import java.nio.charset.StandardCharsets;
+import java.io.ByteArrayOutputStream;
+
 
 public class YouTubeVideoActivity extends AppCompatActivity {
 
-    TextView Name,Desc,Title,Image;
-//    ImageView imageView;
+    TextView Name, Desc;
     WebView webView;
     ImageButton favoriteButton;
+    DatabaseHelper dbHelper;
+    String videoUrl;
     boolean isFavorite = false;
-    String videoId; // To identify the video
-
+    String movieName, movieImageUrl;
+    private Button favoriteButton1;
 
 
     @Override
@@ -42,83 +52,77 @@ public class YouTubeVideoActivity extends AppCompatActivity {
             return insets;
         });
 
+        dbHelper = new DatabaseHelper(this);
 
         Intent intent = getIntent();
         String[] Product = intent.getStringArrayExtra("Product");
 
         Name = findViewById(R.id.textView13);
         Desc = findViewById(R.id.textView14);
-//        Title = findViewById(R.id.textView15);
-//        imageView = findViewById(R.id.detailImage2);
-
         webView = findViewById(R.id.webView2);
         favoriteButton = findViewById(R.id.favoriteButton);
+//        favoriteButton1 = findViewById(R.id.button6);
 
+        movieName = Product[0];
+        String movieDesc = Product[1];
+        String movieImage = Product[3];
+        String movieUrl = Product[4];
+        movieImageUrl = movieImage; // Assuming this is the URL
 
-
-
-//        String s = "file:///android_asset/add.php?bc=" + "bc";
-//        webView.loadUrl(s);
-
-
-//        webView.
-//        webView.loadUrl("file:///android_asset/youtube.html");
-
-
-        String[] videoData = intent.getStringArrayExtra("Product");
-
-        String Name = Product[0];
-        String Desc = Product[1];
-        String Title = Product[2];
-        String Image = Product[3];
-        String Url = Product[4];
-
-        // Extract video ID from URL for favorites tracking
-        this.videoId = extractVideoId(Url);
-        isFavorite = FavoritesFragment.isFavorite(this, videoId);
+        // Check if this movie is already a favorite
+        isFavorite = dbHelper.isFavorite(movieName);
         updateFavoriteButton();
+
+//        favoriteButton1.setOnClickListener(v -> {
+//            Intent intent1 = new Intent(YouTubeVideoActivity.this, FragmentActivity.class);
+//            startActivity(intent1);
+//            finish();
+//        });
+
+
+        favoriteButton.setOnClickListener(v -> {
+            if (isFavorite) {
+                dbHelper.removeFavorite(movieName);
+                Toast.makeText(this, "Removed from favorites", Toast.LENGTH_SHORT).show();
+            } else {
+                Log.d( "check", movieDesc );
+                dbHelper.addFavorite(movieName, movieImageUrl, movieUrl, videoUrl, movieDesc);
+                Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
+            }
+            isFavorite = !isFavorite;
+            updateFavoriteButton();
+        });
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         String html = "<html><body>" +
-                "<iframe width=\"366\" height=\"325\" src=\""+Url+"\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write;   encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>" +
+                "<iframe width=\"100%\" height=\"100%\" src=\""+movieUrl+"\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>" +
                 "</body></html>";
         String baseUrl = "https://example.com/";
         webView.loadDataWithBaseURL(baseUrl, html, "text/html", null, baseUrl);
-//        imageView.setImageResource(Integer.parseInt(Image));
-        this.Name.setText(Name);
-        this.Desc.setText(Desc);
-//        this.Title.setText(Title);
+
+        Name.setText(movieName);
+        Desc.setText(movieDesc);
+        videoUrl = movieUrl;
 
 
-        favoriteButton.setOnClickListener(v -> {
-            isFavorite = !isFavorite;
-            if (isFavorite) {
-                FavoritesFragment.addToFavorites(this, videoId);
-                Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
-            } else {
-                FavoritesFragment.removeFromFavorites(this, videoId);
-                Toast.makeText(this, "Removed from favorites", Toast.LENGTH_SHORT).show();
-            }
-            updateFavoriteButton();
-        });
     }
 
     private void updateFavoriteButton() {
-        favoriteButton.setImageResource(
-                isFavorite ? R.drawable.ic_launcher_foreground : R.drawable.ic_launcher_background
-        );
-    }
-
-
-
-
-    private String extractVideoId(String url) {
-        // Simple extraction - you might need a more robust solution
-        if (url.contains("v=")) {
-            return url.substring(url.indexOf("v=") + 2, url.indexOf("v=") + 13);
+        if (isFavorite) {
+            favoriteButton.setImageResource(R.drawable.ic_launcher_foreground);
+        } else {
+            favoriteButton.setImageResource(R.drawable.ic_launcher_background);
         }
-        return String.valueOf(url.hashCode()); // Fallback
     }
 
+
+
+
+
+    @Override
+    protected void onDestroy() {
+        dbHelper.close();
+        super.onDestroy();
+    }
 }

@@ -103,7 +103,6 @@
             android:layout_marginRight="20dp"
             android:gravity="end"
             android:text="@string/Forgot"
-            android:textColor="#F6FFFFFF"
             android:textSize="20dp"
             android:textStyle="bold" />
 
