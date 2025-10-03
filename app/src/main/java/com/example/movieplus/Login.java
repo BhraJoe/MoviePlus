@@ -121,28 +121,33 @@ public class Login extends AppCompatActivity {
 //                                        updateUI(null);
                                     }
                                 }
+
                             });
                 } catch (Exception e) {
                     Toast.makeText(this,e.toString(), Toast.LENGTH_SHORT).show();
                 }
 
 
+            }else {
+                Toast.makeText(this, "All Fields Required", Toast.LENGTH_SHORT).show();
             }
 
-            }
-
-
-
-
-
+        }else {
+            Toast.makeText(this, "All Fields Required", Toast.LENGTH_SHORT).show();
         }
+
+
+
+
+
+    }
 
 
     private void updateUI(FirebaseUser firebaseUser) {
 
         try {
 
-            Toast.makeText(this, "LogIn Successful", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "LogIn Successful", Toast.LENGTH_SHORT).show();
 
             Intent intent1 = new Intent(getApplicationContext(), MoviePlusActivity.class);
             startActivity(intent1);
@@ -176,4 +181,12 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),Login.class);
         startActivity(intent);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+    }
+
+
 }
