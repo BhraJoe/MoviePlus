@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace 'com.example.movieplus'
+    namespace 'com.demo.movieplus'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.example.movieplus"
+        applicationId "com.demo.movieplus"
         minSdk 24
         targetSdk 35
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -22,6 +22,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
+            shrinkResources false
+            debuggable false
         }
     }
     compileOptions {
