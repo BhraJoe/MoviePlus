@@ -103,5 +103,6 @@ public class DetailPage extends AppCompatActivity {
     }
 
 
-    
+
+
 }
