@@ -207,27 +207,6 @@ public class Register extends AppCompatActivity {
         return password.length() >= 6;
     }
 
-    private void openPrivacyPolicy() {
-        // Open privacy policy in browser or in-app
-        try {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://yourapp.com/privacy-policy")); // Replace with your actual privacy policy URL
-            startActivity(browserIntent);
-        } catch (Exception e) {
-            Toast.makeText(this, "Cannot open browser", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void openTermsAndConditions() {
-        // Open terms and conditions in browser or in-app
-        try {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("https://yourapp.com/terms")); // Replace with your actual terms URL
-            startActivity(browserIntent);
-        } catch (Exception e) {
-            Toast.makeText(this, "Cannot open browser", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     private void updateUI(FirebaseUser user) {
         try {
