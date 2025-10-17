@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1052656585051",
+    "firebase_url": "https://movieplus-57234-default-rtdb.firebaseio.com",
+    "project_id": "movieplus-57234",
+    "storage_bucket": "movieplus-57234.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052656585051:android:ac22dce484ce0cb4aef27e",
+        "android_client_info": {
+          "package_name": "com.devhub.vertex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxFQuZLjZ6FAsagZ1MCC-Wq7cK0HKxepE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052656585051:android:a41a68526fc1f317aef27e",
+        "android_client_info": {
+          "package_name": "com.example.movieplus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxFQuZLjZ6FAsagZ1MCC-Wq7cK0HKxepE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
