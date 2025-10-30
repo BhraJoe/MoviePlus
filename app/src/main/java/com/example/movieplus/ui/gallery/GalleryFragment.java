@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.movieplus.DetailPage;
 import com.example.movieplus.R;
 import com.example.movieplus.User.SelectedHomeItem;
 import com.example.movieplus.databinding.FragmentGalleryBinding;
@@ -58,7 +60,7 @@ public class GalleryFragment extends Fragment implements SelectedHomeItem {
                 " friends, ghosts… and the best detectives on the Mortal plane. They will do anything to stick" +
                 " together – including escaping evil witches, Hell and Death herself.With the help of a" +
                 " clairvoyant named Crystal and her friend Niko,they are able to crack some of the mortal" +
-                " realm’s most mystifying paranormal cases.","Title",R.drawable.image6,"https://www.youtube.com/embed/8bGICMgXEn0?si=2bo8FFiLice4R7zs"));
+                " realm’s most mystifying paranormal cases.","Title",R.drawable.image6,"https://www.youtube.com/embed/hwJmZ2Ekfbc?si=jXhYmYaCZo7vmxZO"));
         arrayList.add(new PlaceholderContent("Fallout"," Based on one of the greatest video" +
                 " game series of all time, Fallout is the story of haves and have-nots in a world in which" +
                 " there’s almost nothing left to have.200 years after the apocalypse, the gentle denizens" +
@@ -66,7 +68,7 @@ public class GalleryFragment extends Fragment implements SelectedHomeItem {
                 " left behind — and are shocked to discover an incredibly complex,gleefully weird and highly" +
                 " violent universe waiting for them. From executive producers Jonathan Nolan and Lisa Joy," +
                 " the creators of Westworld, starring Ella Purnell, Aaron Moten, Walton  Goggins and more." +
-                " All episodes arrive April 11 on Prime Video.","Title",R.drawable.image11,"https://www.youtube.com/embed/0kQ8i2FpRDk?si=240nGwreO530BioD"));
+                " All episodes arrive April 11 on Prime Video.","Title",R.drawable.image11,"https://www.youtube.com/embed/V-mugKDQDlg?si=_DW1OJVqkxUJkwuX"));
         arrayList.add(new PlaceholderContent("Chief Of Station","After learning the untimely death" +
                 " of his wife was not accidental,a former CIA Station Chief (Aaron Eckhart) is forced back" +
                 " into the espionage underworld, teaming up with an adversary to unravel conspiracy that" +
@@ -115,7 +117,7 @@ public class GalleryFragment extends Fragment implements SelectedHomeItem {
                 " three young women bound for powerful destinies...if they can all survive a" +
                 " deadly present.","Title", R.drawable.image28,"https://www.youtube.com/embed/s_76M4c4LTo?si=x8DINBx3Bk0jZqN4"));
         arrayList.add(new PlaceholderContent("Life After Fighting","First movie trailer for" +
-                " Life After Fighting starring Bren Foster.","Title",R.drawable.image70,"https://www.youtube.com/embed/KMdiYlC_cA8?si=VLqTm0wmD16PWUSB"));
+                " Life After Fighting starring Bren Foster.","Title",R.drawable.image70,"https://www.youtube.com/embed/iykZmLa5e34?si=8c885gBH8e0wiSyx"));
         arrayList.add(new PlaceholderContent("Todos los nombres de Dios","Tras un atentado," +
                 " Santi es tomado como rehén por Hamza,el  único terrorista superviviente." +
                 " Un giro inesperado intercambia los papeles y Santi se convierte en una" +
@@ -231,6 +233,4 @@ public class GalleryFragment extends Fragment implements SelectedHomeItem {
         startActivity(intent);
 
     }
-
-
 }

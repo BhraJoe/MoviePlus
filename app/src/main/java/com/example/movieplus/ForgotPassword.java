@@ -49,7 +49,7 @@ public class ForgotPassword extends AppCompatActivity {
         button4 = findViewById(R.id.button4);
         email = findViewById(R.id.email);
         progressBar = findViewById(R.id.progressBar);
-
+        
 
 
         mAuth = FirebaseAuth.getInstance();
