@@ -3,7 +3,7 @@
 
 
     <string name="Create">Create Account</string>
-    <string name="Create1">Create an account so you can explore for the existing jobs</string>
+    <string name="Create1">Create an account so you can explore for the existing movies</string>
     <string name="Email">Email</string>
     <string name="Password">Password</string>
     <string name="Confirm">Confirm Password</string>
@@ -12,7 +12,7 @@
     <string name="Or">Or continue with</string>
 
 
-    <string name="Login">Login here</string>
+    <string name="Login">LogIn Here</string>
     <string name="Welcome">Welcome back you have been missed!</string>
     <string name="Sign1">Sign In</string>
     <string name="Forgot">Forgot password?</string>
@@ -44,6 +44,7 @@
     <string name="menu_home">TV Shows</string>
     <string name="menu_gallery">Movies</string>
     <string name="menu_favorites">Favorites</string>
+    <string name="menu_slideshow">Cartoons</string>
 
 
     <string name="menu_movie">Top 10 Movies</string>
@@ -52,6 +53,7 @@
 
 
     <string name="remove_favorite">Remove from favorites</string>
+    <string name="no_favorites">No favorites found!</string>
     <string name="no_favorites">No favorites yet</string>
 
 

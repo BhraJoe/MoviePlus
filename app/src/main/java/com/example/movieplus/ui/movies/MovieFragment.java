@@ -1,23 +1,16 @@
 package com.example.movieplus.ui.movies;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.SearchView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.movieplus.DetailPage;
 import com.example.movieplus.R;
 import com.example.movieplus.User.SelectedHomeItem;
 import com.example.movieplus.databinding.FragmentMovieListBinding;
@@ -37,8 +30,8 @@ public class MovieFragment extends Fragment implements SelectedHomeItem {
     private int mColumnCount = 2;
     ArrayList<PlaceholderContent> searchHolder,searchHolder2,arrayList, arrayList2,arrayList3;
 //    SearchView searchView;
-    
-    
+
+
     FragmentMovieListBinding  binding;
     RecyclerView recyclerView,recyclerView2,recyclerView3;
 
@@ -277,4 +270,6 @@ public class MovieFragment extends Fragment implements SelectedHomeItem {
         startActivity(intent);
 
     }
+
+
 }

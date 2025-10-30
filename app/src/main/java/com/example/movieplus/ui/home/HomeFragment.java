@@ -21,7 +21,7 @@ import com.example.movieplus.webpages.YouTubeVideoActivity;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment implements SelectedHomeItem  {
+public class HomeFragment extends Fragment implements SelectedHomeItem {
 
 
     FragmentHomeBinding  binding;
@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment implements SelectedHomeItem  {
                 " Halan, and a tense battle of wills unfolds. Halan begins" +
                 " to question whether Aster is friend or foe, as her ability" +
                 " to disguise her agenda and motives could make her a" +
-                " formidable opponent.","Title",R.drawable.image7,"https://www.youtube.com/embed/zQuy5yoWJ7o?si=GnF0Wt6uqkb5sMMQ"));
+                " formidable opponent.","Title",R.drawable.image7,"https://www.youtube.com/embed/x89qafBgq4Y?si=lS6rROInkAgcqoAB"));
         arrayList.add(new PlaceholderContent("Game Of Thrones","It’s time to return to Westeros.","Title",R.drawable.image9,"https://www.youtube.com/embed/KPLWWIOCOOQ?si=c_CR64iqXZB_DVu6"));
         arrayList.add(new PlaceholderContent("The Blacklist","Raymond Reddington (James Spader), one of" +
                 " the FBI’s most wanted men,goes to the FBI H.Q. in Washington to turn himself in" +
@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment implements SelectedHomeItem  {
         arrayList.add(new PlaceholderContent("House Of The Dragon","","Title", R.drawable.image15,"https://www.youtube.com/embed/gnxB9xZByyQ?si=s-QgLkQd91tF2d9h"));
         arrayList.add(new PlaceholderContent("Vikings Valhalla","","Title",R.drawable.image85,"https://www.youtube.com/embed/Yi4YnwFT7Gk?si=jUeaQQnB3iF-HO90"));
 
-        arrayList.add(new PlaceholderContent("Sistas","","Title",R.drawable.image86,"https://www.youtube.com/embed/cgnf6fXAuPw?si=z3o4Pg9pbDFdTk45"));
+        arrayList.add(new PlaceholderContent("Sistas","","Title",R.drawable.image86,"https://www.youtube.com/embed/Isvy2gILyo0?si=DazJycY_tGmWOV6i"));
         arrayList.add(new PlaceholderContent("Supacell","","Title",R.drawable.image91,"https://www.youtube.com/embed/Frmk94Etedo?si=ow-hA_qSixZON4Gs"));
 
 
@@ -114,7 +114,7 @@ public class HomeFragment extends Fragment implements SelectedHomeItem  {
                 " a weary Logan cares for an ailing Professor X in a hideout on the Mexican border." +
                 " But Logan's attempts to hide from the world and his legacy are up-ended when a" +
                 " young mutant arrives, being pursued by dark forces.","Title",R.drawable.image52,"https://www.youtube.com/embed/RH3OxVFvTeg?si=2T-3oqyFZX__7FrE"));
-        arrayList.add(new PlaceholderContent("Humane","","Title",R.drawable.image53,"https://www.youtube.com"));
+        arrayList.add(new PlaceholderContent("Humane","","Title",R.drawable.image53,"https://www.youtube.com/embed/V4b-OMLNWE0?si=3HPBHM__fovQkYg3"));
         arrayList.add(new PlaceholderContent("6 Hours Away"," An Ex-Marine must assassinate the" +
                 " six rivals of the Cartel leader who kidnapped his wife, or never" +
                 " see her again.","Title",R.drawable.image54,"https://www.youtube.com/embed/Z9rcVX8GZww?si=dgMqz_8YeFG9tWpK"));
@@ -135,8 +135,8 @@ public class HomeFragment extends Fragment implements SelectedHomeItem  {
                 " (played by Gyllenhaal)is suspected of the crime. The series explores obsession," +
                 " sex,politics, and the power and limits of love, as the accused fights  to hold" +
                 " his family and marriage together.","Title", R.drawable.image57,"https://www.youtube.com/embed/ZNSY3lMioHs?si=yB6bTJAbGGd4KDOV"));
-        arrayList.add(new PlaceholderContent("Before The World Set On Fire","","Title",R.drawable.image59,"https://www.youtube.com"));
-        arrayList.add(new PlaceholderContent("Blue Bloods","","Title",R.drawable.image60,"https://www.youtube.com"));
+        arrayList.add(new PlaceholderContent("Before The World Set On Fire","","Title",R.drawable.image59,"https://www.youtube.com/embed/Q_hMUUIuCUE?si=QRBlqjyhit3JULrh"));
+        arrayList.add(new PlaceholderContent("Blue Bloods","","Title",R.drawable.image60,"https://www.youtube.com/embed/Gk9Q3QLTlXo?si=l4EgnUc1qmkYZWGj"));
         arrayList.add(new PlaceholderContent("Wild Eye And Wicked"," Lily’s therapist (Colleen Camp)" +
                 " and girlfriend (Saunders) attempt to help Lily navigate the childhood loss of her mother," +
                 " Silvia (Stefanie Estes).They encourage Lily, on the anniversary of her mother’s death," +
@@ -211,6 +211,7 @@ public class HomeFragment extends Fragment implements SelectedHomeItem  {
         Intent intent = new Intent(getActivity(), YouTubeVideoActivity.class);
         intent.putExtra("Product", Product);
         startActivity(intent);
+
     }
 
 

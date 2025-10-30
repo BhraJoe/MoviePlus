@@ -97,7 +97,7 @@ public class Login extends AppCompatActivity {
 
         if (pass.booleanValue() && user.booleanValue()){
 
-            Toast.makeText(this, pass+" "+ user, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, pass+" "+ user, Toast.LENGTH_SHORT).show();
 
             if (pass.booleanValue() && user.booleanValue()){
 
@@ -121,32 +121,40 @@ public class Login extends AppCompatActivity {
 //                                        updateUI(null);
                                     }
                                 }
+
                             });
                 } catch (Exception e) {
                     Toast.makeText(this,e.toString(), Toast.LENGTH_SHORT).show();
                 }
 
 
+            }else {
+                Toast.makeText(this, "All Fields Required", Toast.LENGTH_SHORT).show();
             }
 
-            }
-
-
-
-
-
+        }else {
+            Toast.makeText(this, "All Fields Required", Toast.LENGTH_SHORT).show();
         }
+
+
+
+
+
+    }
+
 
 
     private void updateUI(FirebaseUser firebaseUser) {
 
         try {
-//            Toast.makeText(this, "Welcome Home", Toast.LENGTH_SHORT).show();
+
+//            Toast.makeText(this, "LogIn Successful", Toast.LENGTH_SHORT).show();
 
             Intent intent1 = new Intent(getApplicationContext(), MoviePlusActivity.class);
             startActivity(intent1);
         } catch (Exception e) {
-            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+
+//            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -159,7 +167,7 @@ public class Login extends AppCompatActivity {
             FirebaseUser currentUser = mAuth.getCurrentUser();
             updateUI(currentUser);
         } catch (Exception e) {
-            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -168,10 +176,11 @@ public class Login extends AppCompatActivity {
 
 
 
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        Intent intent = new Intent(getApplicationContext(),Login.class);
-//        startActivity(intent);
-//    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+    }
+
+
 }
