@@ -143,6 +143,7 @@ public class Login extends AppCompatActivity {
     }
 
 
+
     private void updateUI(FirebaseUser firebaseUser) {
 
         try {
@@ -174,13 +175,6 @@ public class Login extends AppCompatActivity {
 
 
 
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(),Login.class);
-        startActivity(intent);
-    }
 
     @Override
     protected void onDestroy() {

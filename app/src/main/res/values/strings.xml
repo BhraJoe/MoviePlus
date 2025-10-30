@@ -30,6 +30,8 @@
     to reset your password</string>
 
 
+
+
     <string name="title_activity_movie_plus">MoviePlusActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -52,6 +54,7 @@
 
     <string name="remove_favorite">Remove from favorites</string>
     <string name="no_favorites">No favorites found!</string>
+    <string name="no_favorites">No favorites yet</string>
 
 
 </resources>

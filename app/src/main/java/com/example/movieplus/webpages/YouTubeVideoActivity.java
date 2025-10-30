@@ -28,6 +28,7 @@ import com.example.movieplus.ui.home.HomeFragment;
 
 import java.io.ByteArrayOutputStream;
 
+import com.example.movieplus.ui.Favorites.FavoritesFragment;
 
 public class YouTubeVideoActivity extends AppCompatActivity {
 
@@ -40,6 +41,8 @@ public class YouTubeVideoActivity extends AppCompatActivity {
     String movieName, movieImageUrl;
     private Button favoriteButton1;
 
+    boolean isFavorite = false;
+    String videoId; // To identify the video
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +100,34 @@ public class YouTubeVideoActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
         String html = "<html><body>" +
                 "<iframe width=\"100%\" height=\"100%\" src=\""+movieUrl+"\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>" +
+
+
+
+
+//        String s = "file:///android_asset/add.php?bc=" + "bc";
+//        webView.loadUrl(s);
+
+
+//        webView.
+//        webView.loadUrl("file:///android_asset/youtube.html");
+
+
+
+        String Name = Product[0];
+        String Desc = Product[1];
+        String Title = Product[2];
+        String Image = Product[3];
+        String Url = Product[4];
+        // Extract video ID from URL for favorites tracking
+        this.videoId = extractVideoId(Url);
+
+        // Initialize favorite status
+        isFavorite = FavoritesFragment.isFavorite(this, videoId);
+        updateFavoriteButton();
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient());
+        String html = "<html><body>" +
+                "<iframe width=\"366\" height=\"326\" src=\""+Url+"\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write;   encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>" +
                 "</body></html>";
         String baseUrl = "https://example.com/";
         webView.loadDataWithBaseURL(baseUrl, html, "text/html", null, baseUrl);
@@ -104,6 +135,34 @@ public class YouTubeVideoActivity extends AppCompatActivity {
         Name.setText(movieName);
         Desc.setText(movieDesc);
         videoUrl = movieUrl;
+
+        // Set up favorite button click listener
+        favoriteButton.setOnClickListener(v -> {
+            isFavorite = !isFavorite;
+            if (isFavorite) {
+                FavoritesFragment.addToFavorites(this, videoId);
+                Toast.makeText(this, "Added to favorites", Toast.LENGTH_SHORT).show();
+            } else {
+                FavoritesFragment.removeFromFavorites(this, videoId);
+                Toast.makeText(this, "Removed from favorites", Toast.LENGTH_SHORT).show();
+            }
+            updateFavoriteButton();
+        });
+    }
+
+    private void updateFavoriteButton() {
+        favoriteButton.setImageResource(
+                isFavorite ? R.drawable.ic_launcher_background : R.drawable.ic_launcher_foreground
+        );
+    }
+
+    private String extractVideoId(String url) {
+        // Simple extraction - you might need a more robust solution
+        if (url.contains("v=")) {
+            return url.substring(url.indexOf("v=") + 2, url.indexOf("v=") + 13);
+        }
+        return String.valueOf(url.hashCode()); // Fallback
+    }
 
 
     }
@@ -125,4 +184,5 @@ public class YouTubeVideoActivity extends AppCompatActivity {
         dbHelper.close();
         super.onDestroy();
     }
+}
 }
