@@ -3,27 +3,33 @@ package com.demo.movieplus;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Menu;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
+import com.demo.movieplus.Login;
+import com.demo.movieplus.R;
 import com.demo.movieplus.databinding.ActivityMoviePlusBinding;
 import com.demo.movieplus.ui.Favorites.FavoritesFragment;
 import com.demo.movieplus.ui.gallery.GalleryFragment;
 import com.demo.movieplus.ui.home.HomeFragment;
 import com.demo.movieplus.ui.movies.MovieFragment;
 import com.demo.movieplus.ui.slideshow.SlideshowFragment;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MoviePlusActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -111,19 +117,14 @@ public class MoviePlusActivity extends AppCompatActivity implements NavigationVi
             navigationView.setCheckedItem(R.id.nav_gallery);
 
 
-        }else if (item.getItemId() == R.id.nav_movie) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new MovieFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_movie);
+        }else if (item.getItemId() == R.id.nav_slideshow) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new SlideshowFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_slideshow);
 
 
         }else if (item.getItemId() == R.id.nav_favorites) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new FavoritesFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_favorites);
-
-
-        }else if (item.getItemId() == R.id.nav_slideshow) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new SlideshowFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_slideshow);
 
 
         }else if (item.getItemId() == R.id.nav_logout) {
@@ -149,7 +150,7 @@ public class MoviePlusActivity extends AppCompatActivity implements NavigationVi
         if (item.getItemId() == R.id.action_logout) {
 
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(getApplicationContext(),Login.class);
+            Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
             finish();
 
