@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
 
+
     private FirebaseAuth mAuth;
     ActivityRegisterBinding binding;
     TextInputEditText Email, Password, Cpassword;
