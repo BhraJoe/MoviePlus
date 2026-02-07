@@ -1,0 +1,10 @@
+android {
+    signingConfigs {
+        release {
+            // Use a relative path instead of a hardcoded C:\Users\... path
+            storeFile file('joe.jks')
+            // ... add your storePassword, keyAlias, and keyPassword here
+        }
+    }
+    // ...
+}

@@ -1,0 +1,12 @@
+android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\Bhra Joe\\joe.jks') // This is likely the culprit
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+}
